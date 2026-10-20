@@ -1,0 +1,28 @@
+[project]
+name = "v2i-open"
+version = "0.1.0"
+description = "Open Norton Ghost / PowerQuest .v2i disk images: parse, extract, map and mount them read-only"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+v2i-info = "v2i_open.container:main"
+v2i-extract = "v2i_open.extract:main"
+v2i-map = "v2i_open.bitmap:main"
+v2i-mount = "v2i_open.mount:main"
+
+[build-system]
+requires = ["uv_build>=0.6"]
+build-backend = "uv_build"
+
+[tool.uv]
+package = true
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
